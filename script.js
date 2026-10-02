@@ -58,9 +58,6 @@ if (contactForm) {
         }
 
         if (isValid) {
-    nameError.textContent = "";
-    emailError.textContent = "";
-    messageError.textContent = "";
 
     setTimeout(function() {
         alert("Thank you! Your message is ready to send.");
