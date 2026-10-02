@@ -1,7 +1,13 @@
 const favoriteButtons = document.querySelectorAll(".favorite-btn");
 
-const favorites = [];
-
+const savedFavorites = JSON.parse(localStorage.getItem("northStarFavorites")) || [];
+const favorites = savedFavorites;
+favoriteButtons.forEach(function(button) {
+const product = button.dataset.product;
+if (favorites.includes(product)) {
+    button.textContent = "Saved!";
+    }
+    });
 function saveFavorites() {
     localStorage.setItem("northStarFavorites", JSON.stringify(favorites));
 }
